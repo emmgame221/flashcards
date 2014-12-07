@@ -42,6 +42,9 @@
             this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flashCardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deckMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cardTextBox = new System.Windows.Forms.TextBox();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.flipButton = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,11 +152,42 @@
             this.deckMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deckMenuItem.Text = "Deck";
             // 
+            // cardTextBox
+            // 
+            this.cardTextBox.AcceptsReturn = true;
+            this.cardTextBox.Location = new System.Drawing.Point(26, 50);
+            this.cardTextBox.Multiline = true;
+            this.cardTextBox.Name = "cardTextBox";
+            this.cardTextBox.ReadOnly = true;
+            this.cardTextBox.Size = new System.Drawing.Size(228, 182);
+            this.cardTextBox.TabIndex = 1;
+            // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(26, 239);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 2;
+            this.nextButton.Text = "Next Card";
+            this.nextButton.UseVisualStyleBackColor = true;
+            // 
+            // flipButton
+            // 
+            this.flipButton.Location = new System.Drawing.Point(178, 239);
+            this.flipButton.Name = "flipButton";
+            this.flipButton.Size = new System.Drawing.Size(75, 23);
+            this.flipButton.TabIndex = 3;
+            this.flipButton.Text = "Flip Card";
+            this.flipButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.flipButton);
+            this.Controls.Add(this.nextButton);
+            this.Controls.Add(this.cardTextBox);
             this.Controls.Add(this.mainMenuStrip);
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "MainForm";
@@ -181,6 +215,9 @@
         private System.Windows.Forms.ToolStripMenuItem newMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flashCardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deckMenuItem;
+        private System.Windows.Forms.TextBox cardTextBox;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button flipButton;
     }
 }
 
