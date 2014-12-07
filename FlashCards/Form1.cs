@@ -16,5 +16,16 @@ namespace FlashCards
         {
             InitializeComponent();
         }
+
+        private void quitMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptSave();
+            Application.Exit();
+        }
+
+        private void PromptSave()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
