@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlashCards
 {
+    [Serializable()]
     struct FlashCard
     {
         public string Front

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlashCards
 {
+    [Serializable()]
     class Deck
     {
         Random rand = new Random();

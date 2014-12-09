@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FlashCards
 {
     public partial class MainForm : Form
     {
+        private const string filename = Directory.GetCurrentDirectory() + @"\decks.bin";
         private List<Deck> decks;
 
         public MainForm()
@@ -30,6 +33,14 @@ namespace FlashCards
         private void PromptSave()
         {
             throw new NotImplementedException();
+        }
+
+        private void SaveDecks()
+        {
+            Stream saveStream = File.Create(filename);
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(saveStream, decks);
+            saveStream.Close();
         }
     }
 }
