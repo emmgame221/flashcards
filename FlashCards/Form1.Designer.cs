@@ -30,6 +30,9 @@
         {
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flashCardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deckMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.ToolStripSeparator();
             this.quitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,12 +42,10 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flashCardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deckMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cardTextBox = new System.Windows.Forms.TextBox();
             this.nextButton = new System.Windows.Forms.Button();
             this.flipButton = new System.Windows.Forms.Button();
+            this.decksComboBox = new System.Windows.Forms.ComboBox();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,21 +72,42 @@
             this.fileMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileMenuItem.Text = "File";
             // 
+            // newMenuItem
+            // 
+            this.newMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.flashCardMenuItem,
+            this.deckMenuItem});
+            this.newMenuItem.Name = "newMenuItem";
+            this.newMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.newMenuItem.Text = "New";
+            // 
+            // flashCardMenuItem
+            // 
+            this.flashCardMenuItem.Name = "flashCardMenuItem";
+            this.flashCardMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.flashCardMenuItem.Text = "Flash Card";
+            // 
+            // deckMenuItem
+            // 
+            this.deckMenuItem.Name = "deckMenuItem";
+            this.deckMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.deckMenuItem.Text = "Deck";
+            // 
             // saveMenuItem
             // 
             this.saveMenuItem.Name = "saveMenuItem";
-            this.saveMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveMenuItem.Size = new System.Drawing.Size(98, 22);
             this.saveMenuItem.Text = "Save";
             // 
             // divider
             // 
             this.divider.Name = "divider";
-            this.divider.Size = new System.Drawing.Size(149, 6);
+            this.divider.Size = new System.Drawing.Size(95, 6);
             // 
             // quitMenuItem
             // 
             this.quitMenuItem.Name = "quitMenuItem";
-            this.quitMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitMenuItem.Size = new System.Drawing.Size(98, 22);
             this.quitMenuItem.Text = "Quit";
             this.quitMenuItem.Click += new System.EventHandler(this.quitMenuItem_Click);
             // 
@@ -101,13 +123,13 @@
             // createMenuItem
             // 
             this.createMenuItem.Name = "createMenuItem";
-            this.createMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createMenuItem.Size = new System.Drawing.Size(108, 22);
             this.createMenuItem.Text = "Create";
             // 
             // studyMenuItem
             // 
             this.studyMenuItem.Name = "studyMenuItem";
-            this.studyMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studyMenuItem.Size = new System.Drawing.Size(108, 22);
             this.studyMenuItem.Text = "Study";
             // 
             // helpMenuItem
@@ -122,35 +144,14 @@
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // newMenuItem
-            // 
-            this.newMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.flashCardMenuItem,
-            this.deckMenuItem});
-            this.newMenuItem.Name = "newMenuItem";
-            this.newMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newMenuItem.Text = "New";
-            // 
-            // flashCardMenuItem
-            // 
-            this.flashCardMenuItem.Name = "flashCardMenuItem";
-            this.flashCardMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.flashCardMenuItem.Text = "Flash Card";
-            // 
-            // deckMenuItem
-            // 
-            this.deckMenuItem.Name = "deckMenuItem";
-            this.deckMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deckMenuItem.Text = "Deck";
             // 
             // cardTextBox
             // 
@@ -180,11 +181,21 @@
             this.flipButton.Text = "Flip Card";
             this.flipButton.UseVisualStyleBackColor = true;
             // 
+            // decksComboBox
+            // 
+            this.decksComboBox.FormattingEnabled = true;
+            this.decksComboBox.Location = new System.Drawing.Point(26, 28);
+            this.decksComboBox.Name = "decksComboBox";
+            this.decksComboBox.Size = new System.Drawing.Size(121, 21);
+            this.decksComboBox.TabIndex = 4;
+            this.decksComboBox.Text = "Choose Deck";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.decksComboBox);
             this.Controls.Add(this.flipButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.cardTextBox);
@@ -218,6 +229,7 @@
         private System.Windows.Forms.TextBox cardTextBox;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button flipButton;
+        private System.Windows.Forms.ComboBox decksComboBox;
     }
 }
 
