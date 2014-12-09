@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deck.cs" />
+    <Compile Include="FlashCard.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
