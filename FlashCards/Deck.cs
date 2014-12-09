@@ -10,6 +10,11 @@ namespace FlashCards
     {
         Random rand = new Random();
         private List<FlashCard> cards;
+        public string Name
+        {
+            get;
+            set;
+        }
 
         public FlashCard CardAt(int index)
         {
