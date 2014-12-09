@@ -42,5 +42,19 @@ namespace FlashCards
             serializer.Serialize(saveStream, decks);
             saveStream.Close();
         }
+
+        private void LoadDecks()
+        {
+            if (File.Exists(filename))
+            {
+                Stream loadStream = File.OpenRead(filename);
+                BinaryFormatter deserializer = new BinaryFormatter();
+                decks = (List<Deck>)deserializer.Deserialize(loadStream);
+            }
+            else
+            {
+                decks = new List<Deck>();
+            }
+        }
     }
 }
