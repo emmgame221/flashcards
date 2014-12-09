@@ -8,29 +8,27 @@ namespace FlashCards
 {
     struct FlashCard
     {
-        private string front;
-        private string back;
-
         public string Front
         {
-            get
-            {
-                return front;
-            }
+            get;
+            set;
         }
 
         public string Back
         {
-            get
-            {
-                return back;
-            }
+            get;
+            set;
         }
 
         public FlashCard(string front, string back)
         {
-            this.front = front;
-            this.back = back;
+            Front = front;
+            Back = back;
+        }
+
+        public FlashCard()
+        {
+
         }
     }
 }
