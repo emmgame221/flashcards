@@ -11,22 +11,35 @@ namespace FlashCards
     {
         Random rand = new Random();
         private List<FlashCard> cards;
+        /// <summary>
+        /// The Name of the deck, to be used for UI purposes mainly.
+        /// </summary>
         public string Name
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// Gets the card at the specified position.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public FlashCard CardAt(int index)
         {
             return cards.ElementAt(index);
         }
-
+        /// <summary>
+        /// Adds a new FlashCard to the end of the deck.
+        /// </summary>
+        /// <param name="card">The FlashCard to add to the deck</param>
         public void Add(FlashCard card)
         {
             cards.Add(card);
         }
-
+        /// <summary>
+        /// Gets the first card in the deck.
+        /// </summary>
+        /// <returns></returns>
         public FlashCard FirstCard()
         {
             return cards[0];
