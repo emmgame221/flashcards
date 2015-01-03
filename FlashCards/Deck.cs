@@ -31,6 +31,15 @@ namespace FlashCards
         {
             return cards[0];
         }
+        /// <summary>
+        /// Moves the card at the front of the deck to the back of the deck.
+        /// </summary>
+        public void CycleCard()
+        {
+            FlashCard card = cards[0];
+            cards.RemoveAt(0);
+            cards.Add(card);
+        }
 
         public Deck() { 
             cards = new List<FlashCard>();
