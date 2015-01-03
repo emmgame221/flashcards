@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace FlashCards
 {
+    /// <summary>
+    /// A class representing a Deck of FlashCards. Provides methods for cycling 
+    /// cards and retrieving the first card.
+    /// </summary>
     [Serializable()]
     class Deck
     {
@@ -53,11 +57,24 @@ namespace FlashCards
             cards.RemoveAt(0);
             cards.Add(card);
         }
-
+        /// <summary>
+        /// Creates an empty deck with no name.
+        /// </summary>
         public Deck() { 
             cards = new List<FlashCard>();
         }
-
+        /// <summary>
+        /// Creates an empty deck with a specified name.
+        /// </summary>
+        /// <param name="name">The name of the new Deck</param>
+        public Deck(String name)
+        {
+            cards = new List<FlashCard>();
+            Name = name;
+        }
+        /// <summary>
+        /// Shuffles the deck using Fisher-Yates algorithm.
+        /// </summary>
         public void Shuffle()
         {
             int n = cards.Count;
