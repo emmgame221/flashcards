@@ -26,14 +26,27 @@ namespace FlashCards
 
         private void quitMenuItem_Click(object sender, EventArgs e)
         {
-            PromptSave();
-            Application.Exit();
+            if(PromptSave())
+                Application.Exit();
         }
 
-        private void PromptSave()
+        private bool PromptSave()
         {
-            //TODO: Figure out how to make a yes-no prompt.
-            throw new NotImplementedException();
+            DialogResult result = MessageBox.Show("Save", "Save all decks?",
+                MessageBoxButtons.YesNoCancel);
+            //If yes or no we want to exit the program.
+            //On cancel we don't.
+            switch (result) {
+                case DialogResult.Yes:
+                    SaveDecks();
+                    return true;
+                case DialogResult.No:
+                    return true;
+                case DialogResult.Cancel:
+                    return false;
+                default://This shouldn't be possible
+                    return false;
+            }
         }
 
         private void SaveDecks()
