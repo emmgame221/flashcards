@@ -34,7 +34,7 @@ namespace FlashCards
         /// </summary>
         /// <param name="front">The front side of the new card</param>
         /// <param name="back">The back side of the new card</param>
-        public FlashCard(string front, string back)
+        public FlashCard(string front, string back) : this()
         {
             Front = front;
             Back = back;
