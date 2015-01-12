@@ -14,7 +14,7 @@ namespace FlashCards
 {
     public partial class MainForm : Form
     {
-        private const string filename = Directory.GetCurrentDirectory() + @"\decks.bin";
+        private const string filename = @"decks.bin";
         private List<Deck> decks;
         private Deck currentDeck;
 

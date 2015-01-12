@@ -39,9 +39,5 @@ namespace FlashCards
             Front = front;
             Back = back;
         }
-        /// <summary>
-        /// Constructor which creates a "blank" card.
-        /// </summary>
-        public FlashCard() {}
     }
 }
