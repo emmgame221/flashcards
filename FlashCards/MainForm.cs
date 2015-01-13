@@ -103,5 +103,21 @@ namespace FlashCards
                     break;
             }
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            if (currentDeck == null)
+            {
+                return; //No deck, no card to go to next
+            }
+            currentDeck.CycleCard();
+            currentCard = currentDeck.FirstCard();
+            cardTextBox.Text = currentCard.Front;
+        }
+
+        private void saveMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptSave();
+        }
     }
 }
