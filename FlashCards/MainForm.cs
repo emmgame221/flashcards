@@ -14,9 +14,14 @@ namespace FlashCards
 {
     public partial class MainForm : Form
     {
+        public const int FRONT = 0;
+        public const int BACK = 1;
+        
         private const string filename = @"decks.bin";
         private List<Deck> decks;
         private Deck currentDeck;
+        private FlashCard currentCard;
+        private int cardSide = FRONT;
 
         public MainForm()
         {
@@ -26,6 +31,7 @@ namespace FlashCards
             currentDeck = decks[0];
             if (currentDeck != null)
             {
+                currentCard = currentDeck.FirstCard();
                 cardTextBox.Text = currentDeck.FirstCard().Front;
             }
             else
@@ -78,6 +84,23 @@ namespace FlashCards
             else
             {
                 decks = new List<Deck>();
+            }
+        }
+
+        private void flipButton_Click(object sender, EventArgs e)
+        {
+            if (currentDeck == null)
+            {
+                return; //There is no card to flip
+            }
+            switch (cardSide)
+            {
+                case FRONT:
+                    cardTextBox.Text = currentCard.Back;
+                    break;
+                case BACK:
+                    cardTextBox.Text = currentCard.Front;
+                    break;
             }
         }
     }

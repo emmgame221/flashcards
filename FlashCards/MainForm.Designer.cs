@@ -180,6 +180,7 @@
             this.flipButton.TabIndex = 3;
             this.flipButton.Text = "Flip Card";
             this.flipButton.UseVisualStyleBackColor = true;
+            this.flipButton.Click += new System.EventHandler(this.flipButton_Click);
             // 
             // decksComboBox
             // 
