@@ -78,36 +78,36 @@
             this.flashCardMenuItem,
             this.deckMenuItem});
             this.newMenuItem.Name = "newMenuItem";
-            this.newMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newMenuItem.Size = new System.Drawing.Size(98, 22);
             this.newMenuItem.Text = "New";
             // 
             // flashCardMenuItem
             // 
             this.flashCardMenuItem.Name = "flashCardMenuItem";
-            this.flashCardMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.flashCardMenuItem.Size = new System.Drawing.Size(129, 22);
             this.flashCardMenuItem.Text = "Flash Card";
             // 
             // deckMenuItem
             // 
             this.deckMenuItem.Name = "deckMenuItem";
-            this.deckMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deckMenuItem.Size = new System.Drawing.Size(129, 22);
             this.deckMenuItem.Text = "Deck";
             // 
             // saveMenuItem
             // 
             this.saveMenuItem.Name = "saveMenuItem";
-            this.saveMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveMenuItem.Size = new System.Drawing.Size(98, 22);
             this.saveMenuItem.Text = "Save";
             // 
             // divider
             // 
             this.divider.Name = "divider";
-            this.divider.Size = new System.Drawing.Size(149, 6);
+            this.divider.Size = new System.Drawing.Size(95, 6);
             // 
             // quitMenuItem
             // 
             this.quitMenuItem.Name = "quitMenuItem";
-            this.quitMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitMenuItem.Size = new System.Drawing.Size(98, 22);
             this.quitMenuItem.Text = "Quit";
             this.quitMenuItem.Click += new System.EventHandler(this.quitMenuItem_Click);
             // 
@@ -123,13 +123,13 @@
             // createMenuItem
             // 
             this.createMenuItem.Name = "createMenuItem";
-            this.createMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createMenuItem.Size = new System.Drawing.Size(108, 22);
             this.createMenuItem.Text = "Create";
             // 
             // studyMenuItem
             // 
             this.studyMenuItem.Name = "studyMenuItem";
-            this.studyMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studyMenuItem.Size = new System.Drawing.Size(108, 22);
             this.studyMenuItem.Text = "Study";
             // 
             // helpMenuItem
@@ -144,13 +144,13 @@
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // cardTextBox

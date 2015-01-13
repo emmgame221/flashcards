@@ -23,6 +23,15 @@ namespace FlashCards
             InitializeComponent();
             decksComboBox.DataSource = decks;
             decksComboBox.DisplayMember = "Name";
+            currentDeck = decks[0];
+            if (currentDeck != null)
+            {
+                cardTextBox.Text = currentDeck.FirstCard().Front;
+            }
+            else
+            {
+                cardTextBox.Text = "Create a new deck and some new cards!";
+            }
         }
 
         private void quitMenuItem_Click(object sender, EventArgs e)
