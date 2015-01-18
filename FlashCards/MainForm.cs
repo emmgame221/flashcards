@@ -26,13 +26,14 @@ namespace FlashCards
         public MainForm()
         {
             InitializeComponent();
+            LoadDecks();
             decksComboBox.DataSource = decks;
             decksComboBox.DisplayMember = "Name";
             currentDeck = decks[0];
             if (currentDeck != null)
             {
-                currentCard = currentDeck.FirstCard();
-                cardTextBox.Text = currentDeck.FirstCard().Front;
+                currentCard = currentDeck.FirstCard;
+                cardTextBox.Text = currentDeck.FirstCard.Front;
             }
             else
             {
@@ -110,8 +111,7 @@ namespace FlashCards
             {
                 return; //No deck, no card to go to next
             }
-            currentDeck.CycleCard();
-            currentCard = currentDeck.FirstCard();
+            currentCard = currentDeck.CycleCard();
             cardTextBox.Text = currentCard.Front;
         }
 

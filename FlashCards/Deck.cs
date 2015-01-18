@@ -44,18 +44,22 @@ namespace FlashCards
         /// Gets the first card in the deck.
         /// </summary>
         /// <returns></returns>
-        public FlashCard FirstCard()
+        public FlashCard FirstCard
         {
-            return cards[0];
+            get
+            {
+                return cards[0];
+            }
         }
         /// <summary>
         /// Moves the card at the front of the deck to the back of the deck.
         /// </summary>
-        public void CycleCard()
+        public FlashCard CycleCard()
         {
             FlashCard card = cards[0];
             cards.RemoveAt(0);
             cards.Add(card);
+            return FirstCard;
         }
         /// <summary>
         /// Creates an empty deck with no name.
