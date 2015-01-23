@@ -130,7 +130,6 @@ namespace FlashCards
             Deck newDeck = new Deck();
             decks.Add(newDeck);
             currentDeck = newDeck;
-            newDeck.Add(new FlashCard());
             currentCard = newDeck.FirstCard;
             cardTextBox.Text = currentCard.Front;
             cardSide = FRONT;
