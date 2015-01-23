@@ -31,6 +31,7 @@ namespace FlashCards
             decksComboBox.DataSource = decks;
             decksComboBox.DisplayMember = "Name";
             currentDeck = decks[0];
+            addTestCards();
             if (currentDeck != null)
             {
                 currentCard = currentDeck.FirstCard;
@@ -100,9 +101,11 @@ namespace FlashCards
             {
                 case FRONT:
                     cardTextBox.Text = currentCard.Back;
+                    cardSide = BACK;
                     break;
                 case BACK:
                     cardTextBox.Text = currentCard.Front;
+                    cardSide = FRONT;
                     break;
             }
         }
@@ -163,10 +166,16 @@ namespace FlashCards
                     currentCard.Back = cardTextBox.Text;
                 }
                 editing = false;
-                nextButton.Enabled = false;
+                nextButton.Enabled = true;
                 cardTextBox.ReadOnly = true;
                 editButton.Text = "Edit";
             }
+        }
+
+        private void addTestCards()
+        {
+            currentDeck.Add(new FlashCard("foo", "bar"));
+            currentDeck.Add(new FlashCard("Hello!", "Goodbye :("));
         }
     }
 }
