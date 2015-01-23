@@ -11,7 +11,7 @@ namespace FlashCards
     /// Has Front and Back properties which contain the data for the card.
     /// </summary>
     [Serializable()]
-    struct FlashCard
+    class FlashCard
     {
         /// <summary>
         /// Represents the front side of the card.
@@ -29,12 +29,17 @@ namespace FlashCards
             get;
             set;
         }
+        public FlashCard()
+        {
+            Front = "";
+            Back = "";
+        }
         /// <summary>
         /// Constructor which creates a new FlashCard with the specified properties.
         /// </summary>
         /// <param name="front">The front side of the new card</param>
         /// <param name="back">The back side of the new card</param>
-        public FlashCard(string front, string back) : this()
+        public FlashCard(string front, string back)
         {
             Front = front;
             Back = back;
