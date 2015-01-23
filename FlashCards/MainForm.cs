@@ -117,7 +117,7 @@ namespace FlashCards
                 return; //No deck, no card to go to next
             }
             currentCard = currentDeck.CycleCard();
-            cardTextBox.Text = currentCard.Front;
+            cardTextBox.Text = (cardSide == FRONT) ? currentCard.Front : currentCard.Back;
         }
 
         private void saveMenuItem_Click(object sender, EventArgs e)
@@ -128,12 +128,13 @@ namespace FlashCards
         private void deckMenuItem_Click(object sender, EventArgs e)
         {
             string name = Prompt.ShowDialog("New Deck", "What is the name of the deck?");
-            Deck newDeck = new Deck();
+            Deck newDeck = new Deck(name);
             decks.Add(newDeck);
             currentDeck = newDeck;
             currentCard = newDeck.FirstCard;
             cardTextBox.Text = currentCard.Front;
             cardSide = FRONT;
+            decksComboBox.DataSource = decks;
         }
 
         private void flashCardMenuItem_Click(object sender, EventArgs e)
