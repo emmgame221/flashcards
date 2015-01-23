@@ -127,6 +127,7 @@ namespace FlashCards
 
         private void deckMenuItem_Click(object sender, EventArgs e)
         {
+            string name = Prompt.ShowDialog("New Deck", "What is the name of the deck?");
             Deck newDeck = new Deck();
             decks.Add(newDeck);
             currentDeck = newDeck;
