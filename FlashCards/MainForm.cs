@@ -22,6 +22,7 @@ namespace FlashCards
         private Deck currentDeck;
         private FlashCard currentCard;
         private int cardSide = FRONT;
+        private bool editing = false;
 
         public MainForm()
         {
@@ -118,6 +119,53 @@ namespace FlashCards
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
             PromptSave();
+        }
+
+        private void deckMenuItem_Click(object sender, EventArgs e)
+        {
+            Deck newDeck = new Deck();
+            decks.Add(newDeck);
+            currentDeck = newDeck;
+            newDeck.Add(new FlashCard());
+            currentCard = newDeck.FirstCard;
+            cardTextBox.Text = currentCard.Front;
+            cardSide = FRONT;
+        }
+
+        private void flashCardMenuItem_Click(object sender, EventArgs e)
+        {
+            FlashCard newCard = new FlashCard("Enter front side here", "Enter back side here");
+            currentCard = newCard;
+            currentDeck.Add(newCard);
+            cardSide = FRONT;
+            cardTextBox.Text = newCard.Front;
+            editButton_Click(null, null);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (!editing)
+            {
+                editing = true;
+                nextButton.Enabled = false;
+                cardTextBox.ReadOnly = false;
+                editButton.Text = "Finish";
+            }
+            else
+            {
+                if (cardSide == FRONT)
+                {
+                    currentCard.Front = cardTextBox.Text;
+                }
+                else
+                {
+                    currentCard.Back = cardTextBox.Text;
+                }
+                editing = false;
+                nextButton.Enabled = false;
+                cardTextBox.ReadOnly = true;
+                editButton.Text = "Edit";
+            }
         }
     }
 }
