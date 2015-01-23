@@ -86,6 +86,7 @@ namespace FlashCards
             else
             {
                 decks = new List<Deck>();
+                decks.Add(new Deck("Initial"));
             }
         }
 

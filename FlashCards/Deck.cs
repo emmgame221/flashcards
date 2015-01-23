@@ -66,6 +66,7 @@ namespace FlashCards
         /// </summary>
         public Deck() { 
             cards = new List<FlashCard>();
+            cards.Add(new FlashCard());
         }
         /// <summary>
         /// Creates an empty deck with a specified name.
@@ -75,6 +76,7 @@ namespace FlashCards
         {
             cards = new List<FlashCard>();
             Name = name;
+            cards.Add(new FlashCard());
         }
         /// <summary>
         /// Shuffles the deck using Fisher-Yates algorithm.
